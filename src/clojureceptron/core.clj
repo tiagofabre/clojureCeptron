@@ -44,8 +44,7 @@
               expected (result-data index-sample)
               result (dot-product @w x)
               error (- expected (unit-step result))
-              scalar-mult (scalar-multiplication (* eta error) x)
-              updated-wights (addition scalar-mult @w)]
+              scalar-mult (scalar-multiplication (* eta error) x)]
 
           (swap! errors conj error)
           (swap! w addition scalar-mult)))))
